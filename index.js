@@ -1,22 +1,22 @@
- function Student(name,id,dept,cgpa)
- { 
-  this.name= name;
-  this.id= id;
-  this.dept= dept;
-  this.cgpa= cgpa;
+var  numberOfWin =0;
+var  numberOfLost =0;
 
-  this.display = function ()
-  {
-    document.write(this.name +"</br>");
-    document.write(this.id+"</br>");
-    document.write(this.dept+"</br>");
-    document.write(this.cgpa+"</br>");
-  }
- }
- var student1= new Student("Zahid",634,"CSE",3.46);
- var student2= new Student("Eva",525,"ELL",3.75);
- var student3= new Student("Humayra",602,"ELL",3.46);
+for(var i =0; i<5;i++)
+{
+var guesseingNumber = parseInt(prompt("Enter number from 1 to 5: "));
+var randomNumber = Math.floor(Math.random()*5)+1;
+if(guesseingNumber==randomNumber)
+{
+     document.write("You have won");
+    numberOfWin ++;
+}
+else{
+     document.write("You have lost. randomNumber was: "+randomNumber);
+    numberOfLost ++;
+}
 
-  student1.display();
+} 
+ document.write("You have won: "+numberOfWin+"</br>"); 
+document.write("You have lost: "+numberOfLost+"</br>");
 
 
