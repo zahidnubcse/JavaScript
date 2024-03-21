@@ -1,13 +1,23 @@
-function heightScore(scores)
+function heightScore(playersInfo)
 {
- var max = scores[0];
- for(var x=1; x<scores.length; x++){
-    if(max < scores[x]){
-        max= scores[x];
+var heightScorer = playersInfo [0][0];
+var heightScore = playersInfo [0][1];
+for(var x=1; x< playersInfo.length; x++)
+{
+    if(heightScore< playersInfo[x][1])
+    {
+        heightScore = playersInfo[x][1];
+        heightScorer = playersInfo[x][0];
     }
- }
-return max;
 }
-var scores =[20,100,0,56,25];
-var maxScore= heightScore(scores);
-document.write(maxScore);
+return heightScorer
+}
+var playersInfo =[
+    ["Tamim",110],
+    ["Sakib",75],
+    ["Musfiq",55],
+    ["Mhamudullah",50],
+    ["Ashraful",100]
+]
+var Name= heightScore(playersInfo);
+document.write(Name);
