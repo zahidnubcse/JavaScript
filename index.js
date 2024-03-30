@@ -1,10 +1,33 @@
-var myVar = document.querySelector("#imageID");
-function myImage1()
+var photos =["images/zahid.jpg", "images/zahid2.jpg", "images/zahid3.jpg"];
+var imageTag = document.querySelector("img");
+
+
+var count = 0;
+function next()
 {
-   myVar.src ="images/zahid.jpg";
+    count++;
+
+    if(count >= photos.length)
+    {
+        count = 0;
+        imageTag.src = photos[count];
+        }
+    else{
+        imageTag.src = photos[count];
+    }
 }
 
-function myImage2()
+
+function prev()
 {
-    myVar.src ="images/eva.jpg";
+    count--;
+
+    if(count >0)
+    {
+        count = photos.length-1;
+         imageTag.src = photos[count];
+        }
+    else{
+        imageTag.src = photos[count];
+    }
 }
